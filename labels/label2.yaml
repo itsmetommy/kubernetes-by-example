@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: labelex2
+  name: label2
   labels:
     env: production
     owner: tommy

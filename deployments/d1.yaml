@@ -1,19 +1,16 @@
-apiVersion: v1
-kind: ReplicationController
+apiVersion: apps/v1beta1
+kind: Deployment
 metadata:
-  name: rcx
+  name: d1
 spec:
-  replicas: 1
-  selector:
-    app: helloworld
+  replicas: 2
   template:
     metadata:
-      name: my-app
       labels:
         app: helloworld
     spec:
       containers:
       - name: helloworld
-        image: itsmetommy/helloworld:latest
+        image: itsmetommy/helloworld:1.0.0
         ports:
         - containerPort: 80
