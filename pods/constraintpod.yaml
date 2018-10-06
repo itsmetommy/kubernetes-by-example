@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: constraintpod
+spec:
+  containers:
+  - name: helloworld
+    image: itsmetommy/helloworld:latest
+    ports:
+    - containerPort: 80
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "500m"
