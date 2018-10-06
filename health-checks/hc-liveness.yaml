@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hc
+  name: hc-liveness
 spec:
   containers:
   - name: helloworld
@@ -12,5 +12,5 @@ spec:
       initialDelaySeconds: 2
       periodSeconds: 5
       httpGet:
-        path: /
+        path: /health
         port: 80

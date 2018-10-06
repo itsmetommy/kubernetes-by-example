@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ready
+  name: hc-readiness
 spec:
   containers:
   - name: helloworld
@@ -11,5 +11,5 @@ spec:
     readinessProbe:
       initialDelaySeconds: 10
       httpGet:
-        path: /
+        path: /health
         port: 80
