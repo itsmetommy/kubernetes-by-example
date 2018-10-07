@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: log2
+spec:
+  containers:
+  - name: log2
+    image: centos:7
+    command:
+      - "bin/bash"
+      - "-c"
+      - "for i in 9 8 7 6 5 4 3 2 1 ; do echo $i ; done"
