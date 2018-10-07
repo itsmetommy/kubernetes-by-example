@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podintest
+spec:
+  containers:
+  - name: helloworld
+    image: itsmetommy/helloworld:latest
+    ports:
+    - containerPort: 80
