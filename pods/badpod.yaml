@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: badpod
+spec:
+  containers:
+  - name: helloworld
+    image: itsmetommy/helloworld:latest
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      initialDelaySeconds: 2
+      periodSeconds: 5
+      httpGet:
+        path: /health
+        port: 8080 # this is the wrong port
