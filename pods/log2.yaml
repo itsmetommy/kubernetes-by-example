@@ -4,7 +4,7 @@ metadata:
   name: log2
 spec:
   containers:
-  - name: log2
+  - name: container2
     image: centos:7
     command:
       - "bin/bash"
