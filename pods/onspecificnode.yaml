@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: onspecificnode
+spec:
+  containers:
+  - name: helloworld
+    image: itsmetommy/helloworld:latest
+    ports:
+    - containerPort: 80
+  nodeSelector:
+    shouldrun: here
