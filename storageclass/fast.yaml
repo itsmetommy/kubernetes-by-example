@@ -2,6 +2,6 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: fast
-provisioner: kubernetes.io/gce-pd
+provisioner: k8s.io/minikube-hostpath
 parameters:
   type: pd-ssd
