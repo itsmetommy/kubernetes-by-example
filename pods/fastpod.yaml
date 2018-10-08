@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+spec:
+  restartPolicy: Never
+  containers:
+  - name: busybox
+    image: busybox
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "while true; do date >> /tmp/pod-out.txt; sleep 1; done"
+    volumeMounts:
+    - name: volume
+      mountPath: /tmp
+  volumes:
+  - name: volume
+    persistentVolumeClaim:
+      claimName: fast-pvc-example-volume
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fast-pvc-example-volume
+spec:
+  storageClassName: fast
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
