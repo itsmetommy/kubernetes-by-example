@@ -1,16 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: helloworld
   name: d1
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: helloworld
   template:
     metadata:
       labels:
         app: helloworld
     spec:
       containers:
-      - name: helloworld
-        image: itsmetommy/helloworld:1.0.0
-        ports:
-        - containerPort: 80
+      - image: itsmetommy/helloworld:1.0.0
+        name: helloworld
